@@ -1,0 +1,19 @@
+{
+  "name": "mini-raft-replica",
+  "version": "1.0.0",
+  "description": "Mini RAFT Leader Election - Replica Nodes",
+  "main": "replica1/server.js",
+  "scripts": {
+    "r1": "node replica1/server.js",
+    "r2": "node replica2/server.js",
+    "r3": "node replica3/server.js",
+    "all": "concurrently \"node replica1/server.js\" \"node replica2/server.js\" \"node replica3/server.js\""
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}

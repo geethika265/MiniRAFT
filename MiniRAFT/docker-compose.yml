@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  replica1:
+    build: .
+    container_name: replica1
+    ports:
+      - "5001:5001"
+
+  replica2:
+    build: .
+    container_name: replica2
+    ports:
+      - "5002:5002"
+
+  replica3:
+    build: .
+    container_name: replica3
+    ports:
+      - "5003:5003"
+
+  gateway:
+    build: ./gateway
+    container_name: gateway
+    ports:
+      - "3000:3000"
