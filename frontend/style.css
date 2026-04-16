@@ -1,10 +1,110 @@
 body {
   text-align: center;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 24px;
+  background: #f7f7f7;
+}
+
+h2 {
+  margin-bottom: 12px;
+}
+
+.toolbar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+#status {
+  color: #444;
+  margin: 8px 0 18px;
+}
+
+#status[data-tone="ok"] {
+  color: #1a7f37;
+}
+
+#status[data-tone="error"] {
+  color: #c62828;
+}
+
+.dashboard {
+  max-width: 920px;
+  margin: 0 auto 20px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.dashboard-header h3 {
+  margin: 0;
+}
+
+.replica-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.replica-card {
+  text-align: left;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+}
+
+.replica-card h4 {
+  margin: 0 0 8px;
+}
+
+.replica-card p {
+  margin: 4px 0;
+}
+
+.replica-card--leader {
+  border-color: #1a7f37;
+  background: #eef9f0;
+}
+
+.replica-card--leader.replica-card--down {
+  border-color: #c62828;
+}
+
+.replica-card--down {
+  border-color: #c62828;
+  background: #fff2f2;
 }
 
 canvas {
   border: 2px solid black;
-  margin-top: 20px;
+  background: #fff;
   cursor: crosshair;
+  max-width: 100%;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+#playbackSpeedValue {
+  min-width: 48px;
+  display: inline-block;
+  text-align: left;
 }

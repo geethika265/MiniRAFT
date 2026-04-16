@@ -5,15 +5,49 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h2>Distributed Drawing App</h2>
 
-<h2>Distributed Drawing App</h2>
+  <div class="toolbar">
+    <label for="colorPicker">Color:</label>
+    <input type="color" id="colorPicker" value="#000000">
 
-<canvas id="canvas" width="800" height="500"></canvas>
+    <label for="brushSize">Brush Size:</label>
+    <input type="range" id="brushSize" min="1" max="10" value="2">
 
-<div>
-  <button id="clearBtn">Clear</button>
-</div>
+    <button id="clearBtn">Clear</button>
+    <button id="undoBtn">Undo</button>
+    <button id="redoBtn">Redo</button>
+    <button id="playBtn">Play</button>
+    <button id="pauseBtn">Pause</button>
+    <button id="replayBtn">Replay</button>
+    <button id="partitionLeaderBtn">Isolate Leader</button>
+    <button id="healNetworkBtn">Heal Network</button>
+    <label for="replicaControl">Replica:</label>
+    <select id="replicaControl">
+      <option value="replica1">replica1</option>
+      <option value="replica2">replica2</option>
+      <option value="replica3">replica3</option>
+      <option value="replica4">replica4</option>
+    </select>
+    <button id="stopReplicaBtn">Stop Node</button>
 
-<script src="app.js"></script>
+    <label for="playbackSpeed">Playback Speed:</label>
+    <input type="range" id="playbackSpeed" min="10" max="200" step="10" value="30">
+    <span id="playbackSpeedValue">30ms</span>
+  </div>
+
+  <p id="status">Starting...</p>
+
+  <section class="dashboard">
+    <div class="dashboard-header">
+      <h3>RAFT Dashboard</h3>
+      <span id="dashboardLeader">Leader: detecting...</span>
+    </div>
+    <div id="replicaCards" class="replica-grid"></div>
+  </section>
+
+  <canvas id="canvas" width="800" height="500"></canvas>
+
+  <script src="app.js"></script>
 </body>
 </html>
